@@ -1,0 +1,25 @@
+{
+  "name": "llamagator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LlamasLTD/llamagator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LlamasLTD/llamagator/issues"
+  },
+  "homepage": "https://github.com/LlamasLTD/llamagator#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "mongoose": "^4.12.3"
+  }
+}
