@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+/**
+ * require in app.js
+ * require in HTTP module and use createServer and listen on port 5000
+ */
+
