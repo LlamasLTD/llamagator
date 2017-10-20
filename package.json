@@ -18,6 +18,7 @@
   "homepage": "https://github.com/LlamasLTD/llamagator#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "boom": "^6.0.0",
     "express": "^4.16.2",
     "helmet": "^3.9.0",
     "mongoose": "^4.12.3"

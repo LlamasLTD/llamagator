@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-/**
- * require in app.js
- * require in HTTP module and use createServer and listen on port 5000
- */
+const http = require('http');
+const app = require('../app');
 
+
+http.createServer(app).listen(5000);
