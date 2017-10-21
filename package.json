@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon bin/www"
+    "watch": "nodemon --inspect -r dotenv/config ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,11 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "boom": "^6.0.0",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "helmet": "^3.9.0",
-    "mongoose": "^4.12.3"
+    "mongoose": "^4.12.3",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0"
   }
 }

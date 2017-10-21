@@ -20,6 +20,8 @@ module.exports = express.Router()
         return res.status(401).send();
     },
     (req, res, next) => {
-        console.log(res.body);
+        const event = req.get('X-Github-Event');
+
+        
     })
 ;
