@@ -14,7 +14,9 @@ const {
 
 const uri = `mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DATA}?authSource=admin`; 
 
+
 mongoose.Promise = global.Promise;
+mongoose.set('debug', true);
 mongoose.connect(uri, { useMongoClient: true })
     .then(() => {
         console.log('connected to mongodb')
@@ -23,7 +25,14 @@ mongoose.connect(uri, { useMongoClient: true })
         console.log(err);
     });
 
+const server = http.createServer(app);
 
+const io = require('socket.io')(server);
 
+io.on('connection', (socket) => {
+    app.on('message', (payload) => {
+        socket.broadcast.emit('message', payload)
+    });
+});
 
-http.createServer(app).listen(5000);
+server.listen(5000);

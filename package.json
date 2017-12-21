@@ -20,10 +20,17 @@
     "body-parser": "^1.18.2",
     "boom": "^6.0.0",
     "dotenv": "^4.0.0",
+    "engine.io": "^3.1.4",
     "express": "^4.16.2",
+    "github-webhook-handler": "^0.7.0",
+    "graphql": "^0.11.7",
+    "graphql-server-express": "^1.2.0",
     "helmet": "^3.9.0",
+    "lodash": "^4.17.4",
     "mongoose": "^4.12.3",
     "passport": "^0.4.0",
-    "passport-github": "^1.1.0"
+    "passport-github": "^1.1.0",
+    "socket.io": "^2.0.4",
+    "ws": "^3.3.3"
   }
 }
