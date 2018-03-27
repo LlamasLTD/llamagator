@@ -30,8 +30,10 @@ const server = http.createServer(app);
 const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
-    app.on('message', (payload) => {
-        socket.broadcast.emit('message', payload)
+    app.on('message', (event) => {
+        const { type, ...payload } = event;
+        
+        socket.broadcast.emit(type, payload);
     });
 });
 

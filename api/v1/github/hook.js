@@ -29,6 +29,7 @@ module.exports = [
 
     /**
      * Perform an update/insert based on the givel url of the PR.
+     * Assumes only PR events for now.
      */
     async (req, res, next) => {
         const event = camelCase(req.get('X-Github-Event'));
@@ -37,7 +38,7 @@ module.exports = [
             throw new Error('Event name not provided');
         }
 
-        const { url, title, created_at, updated_at, closed_at } = req.body.pull_request;
+        const { url, id, title, created_at, updated_at, closed_at } = req.body.pull_request;
         const { login } = req.body.pull_request.user;
 
         try {
@@ -51,6 +52,7 @@ module.exports = [
             } else {
                 changes = {
                     url,
+                    id,
                     title,
                     state: req.body.action,
                     createdBy: login,
@@ -64,7 +66,8 @@ module.exports = [
             req.app.emit('message', {
                 type: event,
                 url,
-                action: req.body.action
+                id, 
+                event: req.body.action
             });
         } catch (err) {
             console.log(err);

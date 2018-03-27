@@ -6,6 +6,10 @@ const schema = mongoose.Schema({
         type: String,
         required: true
     },
+    id: {
+        type: Number,
+        required: true
+    },
     url: {
         type: String,
         required: true
