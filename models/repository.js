@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 
-const repositorySchema = mongoose.Schema({
-    repo: {
-        type: Number,
+const schema = mongoose.Schema({
+    repo_id: {
+        type: String,
         required: true
     },
     name: {
@@ -13,9 +13,13 @@ const repositorySchema = mongoose.Schema({
     url: {
         type: String,
         required: true
+    },
+    secret: {
+        type: String,
+        required: true
     }
 });
 
-repositorySchema.index({ createdAt: 1, repo: 1 });
+schema.index({ createdAt: 1, repo: 1 });
 
-module.exports = mongoose.model('Repository', repositorySchema);
+module.exports = mongoose.model('Repository', schema);

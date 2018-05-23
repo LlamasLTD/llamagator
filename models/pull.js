@@ -6,7 +6,11 @@ const schema = mongoose.Schema({
         type: String,
         required: true
     },
-    id: {
+    repo_id: {
+        type: Number,
+        required: true
+    },
+    pull_id: {
         type: Number,
         required: true
     },
@@ -18,17 +22,19 @@ const schema = mongoose.Schema({
         type: String,
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         required: true
     },
-    updatedAt: {
+    updated_at: {
         type: Date,
         required: true
     },
-    closedAt: {
+    closed_at: {
         type: Date
     }
 });
+
+schema.index({ pull_id: 1 });
 
 module.exports = mongoose.model('PullRequest', schema);
